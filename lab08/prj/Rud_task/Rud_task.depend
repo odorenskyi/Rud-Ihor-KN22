@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1678299880 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab08/prj/Rud_task/main.cpp
+	<iostream>
+	<clocale>
+	<ModulesRud.h>
+
+1678289754 /home/ihor/University/BMTP/Rud-Ihor-KN22/lab08/prj/ModulesRud.h
+
