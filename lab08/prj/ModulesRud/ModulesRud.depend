@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1681482362 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab08/prj/ModulesRud/main.cpp
+	<cmath>
+	<iostream>
+
