@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1682691853 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab10/prj/TestDriver/main.cpp
+	<iostream>
+	<ModulesRud.h>
+

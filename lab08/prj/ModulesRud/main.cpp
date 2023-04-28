@@ -1,10 +1,21 @@
 #include <cmath>
 #include <iostream>
+#include <fstream>
+#include <locale>
+#include <ctime>
 using namespace std;
 
-int SampleAddInt(int i1, int i2)
-{
-    return i1 + i2;
+int dec2Bin(int n){
+    int bin = 0;
+    int remainder = 1;
+    int i = 1;
+    while(n != 0){
+        remainder = n % 2;
+        n = n / 2;
+        bin = bin + remainder * i;
+        i *= 10;
+    }
+    return bin;
 }
 double s_calculation(double x, double y)
 {
@@ -97,4 +108,74 @@ void task9_4(){
     }else{
         task9_4();
     }
+}
+void task10_1(string inputfile,string outputfile){
+    locale loc("uk_UA.utf8");
+    ifstream fin;
+    ofstream fout;
+    fin.open(inputfile);
+    fout.open(outputfile);
+
+    try{
+        if(!fout.is_open() || !fin.is_open()){
+            throw "Файл не вдалося відкрити!";
+        }
+        string line;
+        while (!fin.eof()) {
+            getline(fin,line);
+            if(line[line.length() - 1] == ',' || line[line.length() - 1] == '.'){
+                fout << "Закінчується на символ " << line[line.length() - 1];
+            }
+        }
+        char ch;
+        string upperLetters;
+        while(fin.get(ch)){
+            if(isupper(ch)){
+                upperLetters += ch;
+            }
+        }
+        fout << "\n" << upperLetters;
+        fout << "Ігор Рудь, Центральноукраїнський технічний університет, Кропивницький, Україна, 2023р.\n";
+
+    }catch (const char* message){
+        cerr << message;
+    }
+    fout.close();
+    fin.close();
+}
+void task10_2(string path){
+    time_t now = time(nullptr);
+    tm* timeinfo = localtime(&now);
+    ofstream fout;
+    fout.open(path,fstream::app);
+    try{
+        if(!fout.is_open()){
+            throw "Файл не вдалося відкрити!";
+        }
+        fout << sizeof(fout) << " kb\n";
+        fout << asctime(timeinfo);
+
+    }catch (const char* message){
+        cerr << message;
+    }
+    fout.close();
+}
+void task10_3(string inputfile,double x, double y, int b){
+
+    double result = s_calculation(x,y);
+
+    ofstream fout;
+    fout.open(inputfile,fstream::app);
+
+    try{
+        if(!fout.is_open()){
+            throw "Файл не вдалося відкрити!";
+        }
+        fout << "\n" << result;
+        fout << "\n" << dec2Bin(b);
+
+    }catch (const char* message){
+        cerr << message;
+    }
+    fout.close();
 }
