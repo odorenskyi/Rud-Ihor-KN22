@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1683211645 source:/home/ihor/University/BMTP/test/temporary_dvd/prj/Modules_dvd/main.cpp
+	<fstream>
+	<iostream>
+	"header.hpp"
+
+1683210006 /home/ihor/University/BMTP/test/temporary_dvd/prj/Modules_dvd/header.hpp
+	<string>
+
+1683209771 source:e:\bmtp_lab_11\temporary_dvd\prj\modules_dvd\main.cpp
+	<fstream>
+	<iostream>
+	"header.hpp"
+
+1683209872 e:\bmtp_lab_11\temporary_dvd\prj\modules_dvd\header.hpp
+	<string>
+
