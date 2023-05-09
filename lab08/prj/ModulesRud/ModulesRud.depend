@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1682683789 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab08/prj/ModulesRud/main.cpp
+1683632791 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab08/prj/ModulesRud/main.cpp
 	<cmath>
 	<iostream>
 	<fstream>
 	<locale>
 	<ctime>
+	"ModulesRud.h"
 

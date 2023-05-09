@@ -3,6 +3,8 @@
 #include <fstream>
 #include <locale>
 #include <ctime>
+#include "ModulesRud.h"
+
 using namespace std;
 
 int dec2Bin(int n){
@@ -55,7 +57,7 @@ pair <string,string> task9_2(int ukrSize)
         case 31:
             return pair<string,string>("12","45/46");
         default:
-            return pair<string,string>("Не існує","Не існує");
+            return pair<string,string>("ĐĐľ ŃŃĐ˝ŃŃ","ĐĐľ ŃŃĐ˝ŃŃ");
     }
 }
 
@@ -118,13 +120,13 @@ void task10_1(string inputfile,string outputfile){
 
     try{
         if(!fout.is_open() || !fin.is_open()){
-            throw "Файл не вдалося відкрити!";
+            throw "Đ¤Đ°ĐšĐť Đ˝Đľ Đ˛Đ´Đ°ĐťĐžŃŃ Đ˛ŃĐ´ĐşŃĐ¸ŃĐ¸!";
         }
         string line;
         while (!fin.eof()) {
             getline(fin,line);
             if(line[line.length() - 1] == ',' || line[line.length() - 1] == '.'){
-                fout << "Закінчується на символ " << line[line.length() - 1];
+                fout << "ĐĐ°ĐşŃĐ˝ŃŃŃŃŃŃŃ Đ˝Đ° ŃĐ¸ĐźĐ˛ĐžĐť " << line[line.length() - 1];
             }
         }
         char ch;
@@ -135,7 +137,7 @@ void task10_1(string inputfile,string outputfile){
             }
         }
         fout << "\n" << upperLetters;
-        fout << "Ігор Рудь, Центральноукраїнський технічний університет, Кропивницький, Україна, 2023р.\n";
+        fout << "ĐĐłĐžŃ Đ ŃĐ´Ń, ĐŚĐľĐ˝ŃŃĐ°ĐťŃĐ˝ĐžŃĐşŃĐ°ŃĐ˝ŃŃĐşĐ¸Đš ŃĐľŃĐ˝ŃŃĐ˝Đ¸Đš ŃĐ˝ŃĐ˛ĐľŃŃĐ¸ŃĐľŃ, ĐŃĐžĐżĐ¸Đ˛Đ˝Đ¸ŃŃĐşĐ¸Đš, ĐŁĐşŃĐ°ŃĐ˝Đ°, 2023Ń.\n";
 
     }catch (const char* message){
         cerr << message;
@@ -150,7 +152,7 @@ void task10_2(string path){
     fout.open(path,fstream::app);
     try{
         if(!fout.is_open()){
-            throw "Файл не вдалося відкрити!";
+            throw "Đ¤Đ°ĐšĐť Đ˝Đľ Đ˛Đ´Đ°ĐťĐžŃŃ Đ˛ŃĐ´ĐşŃĐ¸ŃĐ¸!";
         }
         fout << sizeof(fout) << " kb\n";
         fout << asctime(timeinfo);
@@ -169,7 +171,7 @@ void task10_3(string inputfile,double x, double y, int b){
 
     try{
         if(!fout.is_open()){
-            throw "Файл не вдалося відкрити!";
+            throw "Đ¤Đ°ĐšĐť Đ˝Đľ Đ˛Đ´Đ°ĐťĐžŃŃ Đ˛ŃĐ´ĐşŃĐ¸ŃĐ¸!";
         }
         fout << "\n" << result;
         fout << "\n" << dec2Bin(b);
@@ -178,4 +180,59 @@ void task10_3(string inputfile,double x, double y, int b){
         cerr << message;
     }
     fout.close();
+}
+void ClassLab12_Rud::setName(string name){
+    m_name = name;
+}
+void ClassLab12_Rud::setCode(string code){
+    m_code = code;
+}
+void ClassLab12_Rud::setX(double x){
+    m_x = x < 0 ? 1 : x;
+}
+void ClassLab12_Rud::setY(double y){
+    m_y = y < 0 ? 1 : y;
+}
+void ClassLab12_Rud::setEmitent(string emitent){
+    m_emitent = emitent;
+}
+void ClassLab12_Rud::setYear(int year){
+    m_year = year;
+}
+void ClassLab12_Rud::setEdition(int edition){
+    m_edition = edition;
+}
+void ClassLab12_Rud::setMetal(string metal){
+    m_metal = metal;
+}
+void ClassLab12_Rud::setGrade(int grade){
+    m_grade = grade;
+}
+void ClassLab12_Rud::setDenomination(string denomination){
+    m_denomination = denomination;
+}
+void ClassLab12_Rud::setMint(string mint){
+    m_mint = mint;
+}
+void ClassLab12_Rud::setWeight(double weight){
+    m_weight = weight;
+}
+double ClassLab12_Rud::getSquare(){
+    return M_PI * m_x * m_y;
+}
+void ClassLab12_Rud::print(){
+    cout << "Монета іноземного виробництва" << "\n" << m_name << "\n"
+    << "Код: " << m_code << "\n"
+    << "Розмір: " << m_x << " x " << m_y << " мм" << "\n"
+    << "Емітент: " << m_emitent << "\n"
+    << "Рік випуску: " << m_year << "\n"
+    << "Тираж: " << m_edition << "\n"
+    << "Метал: " << m_metal << "\n"
+    << "Проба: " << m_grade << "\n"
+    << "Номінал: " << m_denomination << "\n"
+    << "Монетний двір: " << m_mint << "\n"
+    << "Вага: " << m_weight << " г" << endl;
+}
+string ClassLab12_Rud::getCode(){
+    return m_code;
 }
