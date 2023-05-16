@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1683645270 source:/home/ihor/University/BMTP/Rud-Ihor-KN22/lab12/prj/Teacher/main.cpp
-	<iostream>
-	<fstream>
-	<filesystem>
-	"ModulesRud.h"
-
