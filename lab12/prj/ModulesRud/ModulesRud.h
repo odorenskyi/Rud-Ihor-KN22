@@ -48,4 +48,5 @@ class ClassLab12_Rud{
 
         void print();
 };
+bool fileInDir();
 #endif // MODULESRUD_H_INCLUDED

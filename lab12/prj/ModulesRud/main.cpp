@@ -236,3 +236,19 @@ void ClassLab12_Rud::print(){
 string ClassLab12_Rud::getCode(){
     return m_code;
 }
+bool fileInDir()
+{
+    string cpp = __FILE__;
+    size_t found = cpp.find("\\lab12\\prj");
+
+    if (found == string::npos) {
+        ofstream oufile("../TestSuite/TestResults.txt");
+        oufile << "Встановлені вимоги не виконані!" << endl;
+        for (int i = 0; i < 100; i++) {
+            cout << "\a";
+        }
+        oufile.close();
+        return false;
+    }
+    return true;
+}

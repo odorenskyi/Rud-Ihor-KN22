@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684226954 source:z:\home\ihor\university\bmtp\rud-ihor-kn22\lab12\prj\modulesrud\main.cpp
+1684227670 source:z:\home\ihor\university\bmtp\rud-ihor-kn22\lab12\prj\modulesrud\main.cpp
 	<cmath>
 	<iostream>
 	<fstream>
@@ -7,5 +7,5 @@
 	<ctime>
 	"ModulesRud.h"
 
-1684226893 z:\home\ihor\university\bmtp\rud-ihor-kn22\lab12\prj\modulesrud\modulesrud.h
+1684227686 z:\home\ihor\university\bmtp\rud-ihor-kn22\lab12\prj\modulesrud\modulesrud.h
 
